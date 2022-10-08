@@ -11,8 +11,6 @@ The cryptocurrency price dashboard displays details about cryptocurrencies. The 
 
 ## Use 
 
-
-
 The dashboard has simple functionality. To add a crypto to the dashboard click 'Add Crypto' and type its name. Note details of cryptos are retrieved using the Coin Market Cap API (https://coinmarketcap.com/api/). In order to use the dashboard you must create a developer account for the Coin MArket API (this is free) and save the key in the 'keys.py' file. If a crypto is not available in the API it is not added.
 
 The dashbaord provides functioanlity for filtering, this is done either on:
@@ -23,7 +21,8 @@ The dashbaord provides functioanlity for filtering, this is done either on:
 
 This is only a beta version. Increased functionality will be added so that:
 
-A. The page autoimatically refreshes when new cryptos are added
+A. The page automatically refreshes when new cryptos are added
+
 B. It is possible to remove cryptos from the dashboard
 
 ## Insparation
