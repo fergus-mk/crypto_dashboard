@@ -1,0 +1,1 @@
+coin_market_cap_key = '####'

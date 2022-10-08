@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+  $(document).ready(function() {
+    $("#add_crypto").click(function() {
+      $('.ui.modal').modal('show');
+    });
+  
+    $("#save").click(function() {
+  
+      var name = $("#names").val();
+
+      $.ajax({
+        url: '/crypto',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ "name": name }),
+        dataType: 'json'
+      });
+
+      $('.ui.modal').modal('hide');
+      location.href = "/";
+    });
+    
+  });
+
+      
+  $("#reload").click(function() {      
+      location.href = "/";
+    });
+    
+</script>
+
+<form>
+  <div class="ui input">
+      <input name = "price" type="text" placeholder="Price" value = "{{ price or '' }}">
+  </div>
+
+  <div class="ui input">
+      <input name = "market_cap" type="text" placeholder="Market Cap"  value = "{{ market_cap or ''}}">
+  </div>
+
+  <button type = "submit "class="ui button primary">Filter Selection</button>
+</form>
+
+<button class="ui button" id = "add_crypto" >Add Crypto</button>
+
+<table class="ui celled table">
+    <thead>
+      <tr><th>Id</th>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price</th>
+      <th>Total Supply</th>
+      <th>Max Supply</th>
+      <th>Market Cap</th>
+    </tr></thead>
+    <tbody>
+      {% for crypto in cryptos %} 
+      <tr>
+        <td> {{ crypto.id}}</td>
+        <td> {{ crypto.name}}</td>
+        <td> {{ crypto.symbol}}</td>
+        <td> {{ crypto.price}}</td>
+        <td> {{ crypto.total_supply}}</td>
+        <td> {{ crypto.max_supply}}</td>
+        <td> {{ crypto.market_cap}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table> 
+
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Crypto Name
+    </div>
+    <div class="content">
+      <div class="ui form">
+        <div class="field">
+          <label>Insert Crypto Name</label>
+          <textarea id="names"></textarea>
+        </div>
+    </div>
+    <div class="actions">
+      <div id = "save" class="ui positive right labeled icon button">
+        Add Names
+        <i class="plus icon"></i>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
