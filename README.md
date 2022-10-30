@@ -11,7 +11,7 @@ The cryptocurrency price dashboard displays details about cryptocurrencies. The 
 
 ## Use 
 
-The dashboard has simple functionality. To add a crypto to the dashboard click 'Add Crypto' and type its name. Note details of cryptos are retrieved using the Coin Market Cap API (https://coinmarketcap.com/api/). In order to use the dashboard you must create a developer account for the Coin MArket API (this is free) and save the key in the 'keys.py' file. If a crypto is not available in the API it is not added.
+The dashboard has simple functionality. To add a crypto to the dashboard click 'Add Crypto' and type its name. Note details of cryptos are retrieved using the [Coin Market Cap API](https://coinmarketcap.com/api/). In order to use the dashboard you must create a developer account for the Coin MArket API (this is free) and save the key in the 'keys.py' file. If a crypto is not available in the API it is not added.
 
 The dashbaord provides functioanlity for filtering, this is done either on:
 - Price (only cryptos with a price over the input value are displayed)
@@ -27,7 +27,7 @@ B. It is possible to remove cryptos from the dashboard
 
 ## Insparation
 
-Note this project has been inspired by: https://github.com/hackingthemarkets/stockscreener
+Note this project has been inspired by: [Stock Screener](https://github.com/hackingthemarkets/stockscreener)
 
 
 
